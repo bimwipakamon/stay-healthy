@@ -1,0 +1,289 @@
+<!-- index.html-->
+
+{% extends "base.html" %} {% block title %}Stay Healthy - Nutritional Calculator{% endblock %} {% block body %}
+<div class="w3-content w3-section" style="max-width:90%;">
+
+  <img class="mySlides w3-animate-fading" src="/static/images/food.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="/static/images/exercise.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="/static/images/happy.jpg" style="width:100%">
+</div>
+
+<script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) { myIndex = 1 }
+    x[myIndex - 1].style.display = "block";
+    setTimeout(carousel, 5000);
+  }
+</script>
+<!-- UNDER SLIDER - BLACK AREA
+    ================================================== -->
+<div class="undersliderblack">
+  <div class="grid">
+    <div class="row space-bot">
+      <div class="c12">
+        <!--Box 1-->
+        <div class="c4 introbox introboxfirst">
+          <div class="introboxinner">
+            <span class="homeicone">
+              <i class="icon-bolt"></i>
+            </span>
+            <b>Meal Recommendation</b>
+            <br> Stay Healthy suggest foods for your goal (Maintain, Loose or Gain)
+          </div>
+        </div>
+        <!--Box 2-->
+        <div class="c4 introbox introboxmiddle">
+          <div class="introboxinner">
+            <span class="homeicone">
+              <i class="icon-cog"></i>
+            </span>
+            <b>Track Development</b>
+            <br> With the help you can easily track your Daily Calorie and Weight Development
+          </div>
+        </div>
+        <!--Box 3-->
+        <div class="c4 introbox introboxlast">
+          <div class="introboxinner">
+            <span class="homeicone">
+              <i class="icon-lightbulb"></i>
+            </span>
+            <b>Calculate Weight Lose</b>
+            <br> A simple web app that let you calculate your Weight and Calories
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="shadowunderslider">
+</div>
+<!-- START content area
+    ================================================== -->
+<div class="grid">
+  <div class="row space-bot">
+    <!--INTRO-->
+    <div class="c12">
+      <div class="royalcontent">
+        <h1 class="royalheader">WELCOME TO THE STAY HEALTHY</h1>
+        <h1 class="title" style="text-transform:none;">Calculate, Plan and Track Nutrional diet for both Gaining and Loosing Weight</h1>
+      </div>
+    </div>
+    <!--Box 1-->
+    <div class="c4">
+      <h2 class="title hometitlebg">
+        <i class="icon-qrcode smallrightmargin"></i>Meal Plans</h2>
+      <div class="noshadowbox">
+        <br>
+        <p>This meal plan is controlled for calories, fiber, saturated fat and sodium. If another nutrient is of particular
+          concern, speak with your health-care provider about altering this meal plan to better suit your individual health
+          needs.</p>
+        <p class="bottomlink">
+        </p>
+      </div>
+    </div>
+    <!--Box 2-->
+    <div class="c4">
+      <h2 class="title hometitlebg">
+        <i class="icon-cog smallrightmargin"></i>Workout Mode</h2>
+      <div class="noshadowbox">
+        <br>
+        <p>The devices below let you start and stop exercise tracking for more precise results. See real-time stats on your
+          wrist to track your progress and pause your workout if you take a short break. Sync to save your workout details
+          to exercise.</p>
+        <p class="bottomlink">
+        </p>
+      </div>
+    </div>
+    <!--Box 3-->
+    <div class="c4">
+      <h2 class="title hometitlebg">
+        <i class="icon-user" style="margin-right:10px;"></i>Calorie Table Calculator</h2>
+      <div class="noshadowbox">
+        <br>
+        <p>Food calorie table calculator you can calculate how many calories you have take on a day. The calorie value of the
+          products has been indicated by piece or by normal portion / glass. The percentage is the share of total calorie
+          intake.</p>
+        <p class="bottomlink">
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- SHOWCASE
+      ================================================== -->
+  <div class="row space-top">
+    <div class="c12 space-top">
+      <h1 class="maintitle ">
+        <span>Quick Facts about food benefits and loosing weight</span>
+      </h1>
+    </div>
+  </div>
+  <div class="row space-bot">
+    <div class="c12">
+      <div class="list_carousel">
+        <div class="carousel_nav">
+          <a class="prev" id="car_prev" href="#">
+            <span>prev</span>
+          </a>
+          <a class="next" id="car_next" href="#">
+            <span>next</span>
+          </a>
+        </div>
+        <div class="clearfix">
+        </div>
+        <ul id="recent-projects">
+          <!--featured-projects 1-->
+          <li>
+            <div class="featured-projects">
+              <div class="featured-projects-image">
+                <a href="/apple">
+                  <img src="/static/images/apple.jpg" class="imgOpa" alt="">
+                </a>
+              </div>
+              <div class="featured-projects-content">
+                <h1>
+                  <a href="/apple">Benefits of Apple</a>
+                </h1>
+                <p>One medium-sized apple contains about four grams of fiber. Some of that is in the form of pectin, a type
+                  of soluble fiber</p>
+              </div>
+            </div>
+          </li>
+          <!--featured-projects 2-->
+          <li>
+            <div class="featured-projects">
+              <div class="featured-projects-image">
+                <a href="/avocado">
+                  <img src="/static/images/avocado.jpg" class="imgOpa" alt="">
+                </a>
+              </div>
+              <div class="featured-projects-content">
+                <h1>
+                  <a href="/avocado">Top 5 Health Benefits of Avocado</a>
+                </h1>
+                <p>Improve your skin and lower your risk of many life-threatening diseases, eating more of this extremely healthy
+                  fruit</p>
+              </div>
+            </div>
+          </li>
+          <!--featured-projects 3-->
+          <li>
+            <div class="featured-projects">
+              <div class="featured-projects-image">
+                <a href="/banana">
+                  <img src="/static/images/banana.jpg" class="imgOpa" alt="">
+                </a>
+              </div>
+              <div class="featured-projects-content">
+                <h1>
+                  <a href="/banana">Health Benefits of Banana Fruit</a>
+                </h1>
+                <p>Banana is one of the high calorie tropical fruits. 100 g of fruit provides 90 calories. Besides, it contains
+                  good of health</p>
+              </div>
+            </div>
+          </li>
+          <!--featured-projects 4-->
+          <li>
+            <div class="featured-projects">
+              <div class="featured-projects-image">
+                <a href="/mangoes">
+                  <img src="/static/images/mangoes.jpg" class="imgOpa" alt="">
+                </a>
+              </div>
+              <div class="featured-projects-content">
+                <h1>
+                  <a href="/mangoes">Benefits of Mangoes Fruit</a>
+                </h1>
+                <p>Mango fruit is rich in pre-biotic dietary fiber, vitamins, minerals, and poly-phenolic flavonoid antioxidant
+                  compounds</p>
+              </div>
+            </div>
+          </li>
+          <!--featured-projects 5-->
+          <li>
+            <div class="featured-projects">
+              <div class="featured-projects-image">
+                <a href="/mangosteen">
+                  <img src="/static/images/mangosteen.jpg" class="imgOpa" alt="">
+                </a>
+              </div>
+              <div class="featured-projects-content">
+                <h1>
+                  <a href="/mangosteen">Health Benefits of Mangosteen</a>
+                </h1>
+                <p>Delicious and juicy, mangosteen is one of the popular tropical fruits. It comprises an impressive list of
+                  essential nutrients</p>
+              </div>
+            </div>
+          </li>
+          <!--featured-projects 6-->
+          <li>
+            <div class="featured-projects">
+              <div class="featured-projects-image">
+                <a href="/orange">
+                  <img src="/static/images/orange.jpg" class="imgOpa" alt="">
+                </a>
+              </div>
+              <div class="featured-projects-content">
+                <h1>
+                  <a href="/orange">Health Benefits of Orange Fruits</a>
+                </h1>
+                <p>Nutrients in oranges are plentiful and diverse. The fruit is low in calories, contains no saturated fats
+                  or cholesterol</p>
+              </div>
+            </div>
+          </li>
+          <!--featured-projects 7-->
+          <li>
+            <div class="featured-projects">
+              <div class="featured-projects-image">
+                <a href="/watermelon">
+                  <img src="/static/images/watermelon.jpg" class="imgOpa" alt="">
+                </a>
+              </div>
+              <div class="featured-projects-content">
+                <h1>
+                  <a href="/watermelon">Health Benefits of Watermelon</a>
+                </h1>
+                <p>Benefits of Watermelon is Rich in electrolytes and water content, melons are nature’s gift to beat tropical
+                  summer thirst</p>
+              </div>
+            </div>
+          </li>
+          <!--featured-projects 8-->
+        </ul>
+        <div class="clearfix">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CALL TO ACTION 
+      ================================================== -->
+  <div class="row space-bot">
+    <div class="c12">
+      <div class="wrapaction">
+        <div class="c9">
+          <h1 class="subtitles">
+            <b>Stay Healthy</b>
+          </h1>
+          calculates, plan, and tracks nutrional diet for gaining and loosing weight and computes the total nutrients your body acquired
+          on a daily basis and suggests a dietary plan for the user’s needs
+        </div>
+        <div class="c3 text-center" style="margin-top:40px;">
+          <a href="/register"><div class="actionbutton">Register Here</div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end grid -->
+{% endblock %}

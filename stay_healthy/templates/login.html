@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block title %}Log In - Stay Healthy{% endblock %} {% block body %}
+
+<!-- HEADER
+    ================================================== -->
+<div class="undermenuarea">
+    <div class="boxedshadow">
+    </div>
+    <div class="grid">
+        <div class="row">
+            <div class="c8">
+                <h1 class="titlehead">Login</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid">
+    <div class="row space-top">
+
+        <div class="c6 space-top">
+            <h1 class="maintitle">
+                <span>
+                    <i class="icon-envelope-alt"></i> Sign in</span>
+            </h1>{% if error %}
+            <div class="alert alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close"></a>
+                <div style="color:lightsalmon">{{error}}</div>
+            </div>{%endif%}
+
+            <form name="form1" method="post">
+                &nbsp;Username
+                <input name="txtUsername" type="text" id="txtUsername"> &nbsp;Password
+                <input name="txtPassword" type="password" id="txtPassword">
+                <br>
+                <input type="submit" name="Submit" value="Login" class="actionbutton">
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br> {% endblock %}

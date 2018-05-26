@@ -1,0 +1,103 @@
+{% extends "base.html" %} {% block title %}Stay Healthy - Full Body Workout{% endblock %} {% block body %}
+<!-- HEADER
+================================================== -->
+<div class="undermenuarea">
+	<div class="boxedshadow">
+	</div>
+	<div class="grid">
+		<div class="row">
+			<div class="c8">
+				<h1 class="titlehead">Ideal Weight Calculator</h1>
+			</div>
+			<div class="c4">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- CONTENT
+================================================== -->
+<div class="grid">
+		<div class="shadowundertop">
+		</div>
+		<div class="row">
+			
+			<!-- MAIN CONTENT -->
+			<div class="c12">
+				<h1 class="maintitle space-top">
+				<span>Ideal Weight</span>
+				</h1>
+					  <ul class="list-teachers">
+        <li>
+          <div class="overflow">
+		  <script>
+		  function $(){
+		  var elements=new Array();
+		  for (var i=0;i<arguments.length;i++){
+			var element=arguments[i];
+			if(typeof element=='string')element=document.getElementById(element);
+			if(arguments.length==1)return element;elements.push(element);
+			}
+			return elements;
+			}
+		  function msystem(){
+			if($('msw').value=='metric'){
+			   $('thw').innerHTML=' (Cms)';}
+			else{
+			   $('thw').innerHTML=' (inches)';};}
+		  function bweight (){
+			var ms=$('msw').value;
+			var sex=$('sw').value;
+			var height=$('hw').value;
+			if(height==null || height.length==0 ){
+				$('ibw').value="Pl. enter data.";}
+			else{
+				$('ibw').value="";}
+			if(ms=='metric'&&height>0&&sex=='m'){
+				$('ibw').value=Math.round(56.2*1+(height*.39-152.4*.39)*1.41)*1+" Kgs";}
+			else if(ms=='metric'&&height>0&&sex=='f'){
+				$('ibw').value=Math.round(53.1*1+(height*.39-152.4*.39)*1.36)*1+" Kgs";}
+			else if(ms=='us'&&height>0&&sex=='m'){
+				$('ibw').value=Math.round(56.2*2.20462+(height*1-60)*1.41*2.20462)*1+" lbs";}
+			else if(ms=='us'&&height>0&&sex=='f'){
+				$('ibw').value=Math.round(53.1*2.20462+(height*1-60)*1.36*2.20462)*1+" lbs";}
+			if(ms=='metric'&&height>0){
+				$('ibw1').value=Math.round(18.5*(height*height/10000))+" Kgs-" +Math.round(25*(height*height/10000))+" Kgs";}
+			else if(ms=='us'&&height>0){
+				$('ibw1').value=Math.round(18.5*(height*height)/703)+" lbs-" +Math.round(25*(height*height)/703)+" lbs";}}
+		</script>
+	<div class="box-contact">
+    <form id="contact-form" name="iw">
+      <fieldset>
+        <div class="coll-1">
+          <div>
+            <div class="form-txt">Measuring System : 
+              <select id=msw onchange=msystem();><option value=metric>Metric (Kgs, Cms)<option value=us>US (lbs, inches)</select></div>
+            <div class="clear"></div>
+          </div>
+		</div>
+          <div>
+            <div class="form-txt">Sex : 
+              <select id=sw><option value=m>Male<option value=f>Female</select></div>
+            <div class="clear"></div>
+          </div> 
+		  <div>
+            <div class="form-txt">Height : <span id=thw>(Cms)</span></div>
+            <label class="phone"><input type="number" id=hw>
+            <div class="clear"></div>
+          </div>
+		  <div>
+			<input class="actionbutton w3-button w3-block w3-green" data-type="submit" type=button onclick='bweight();' value="Calculate Ideal Weight">
+		  </div><br>
+		  <h5>Ideal Weight : <input id=ibw class=op style="margin-bottom:5px;"> or <input id=ibw1 class=op></h5>
+	  </p>		  
+      </fieldset>
+    </form>
+	</div>
+	</div>
+     <div class="clear"></div>
+      </li>
+      </ul>	 
+		</div><!-- end main content -->			
+		</div>
+</div><!-- end grid -->
+{% endblock %}

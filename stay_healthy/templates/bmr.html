@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block title %}Stay Healthy - Full Body Workout{% endblock %} {% block body %}
+<!-- HEADER
+================================================== -->
+<div class="undermenuarea">
+	<div class="boxedshadow">
+	</div>
+	<div class="grid">
+		<div class="row">
+			<div class="c8">
+				<h1 class="titlehead">BMR Calculator</h1>
+			</div>
+			<div class="c4">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- CONTENT
+================================================== -->
+<div class="grid">
+		<div class="shadowundertop">
+		</div>
+		<div class="row">
+			
+			<!-- MAIN CONTENT -->
+			<div class="c12">
+				<h1 class="maintitle space-top">
+				<span>BASAL METABOLIC RATE</span>
+				</h1>
+					  <ul class="list-teachers">
+        <li>
+          <div class="overflow">
+	<div class="box-contact">
+    <form id="contact-form" name=fp action="#">
+      <fieldset>
+			Genter : 
+			<input style='width:20%;'type="radio" id="gender" name="gender" value="masc" checked> Male
+			<input style='width:20%;'type="radio" id="gender" name="gender" value="fem"> Female<br>
+			<br>
+			Age : 
+            <label class="phone"><input type="number" id="age" value="18">
+			Height :
+            <label class="phone"><input type="number" id="height" value="170">
+			Weight :
+            <label class="phone"><input type="number" id="weigth" value="70">
+			<button type="button" value="Calculate BMR" onclick="">Calculate BMR</button><br>
+			<h5>ปริมาณการเผาผลาญพลังงาน : <b id="lblResult" class=op > </b> แคลอรี่ / วัน</h5>
+	</div>  		 
+		 <script>
+			var bmr;   
+			function calc() {
+				var age = document.getElementById("age").value;
+				var gender = document.getElementById("gender").value;
+				var height = document.getElementById("height").value;
+				var weigth = document.getElementById("weigth").value;
+			if (gender == "masc") {
+				bmr = 66.5 + ( 13.75 * weigth ) + ( 5.003 * height ) - ( 6.755 * age );
+			}
+			else {
+				bmr = 655.1 + ( 9.563 * weigth ) + ( 1.850 * height ) - ( 4.676 * age );
+			} 
+			}
+			document.getElementsByTagName("button")[0].addEventListener("click", function() {
+			calc();
+			document.getElementById('lblResult').innerHTML = bmr;
+			})
+		</script>		  
+      </fieldset>
+    </form>
+	</div>
+	</div>
+      </li>
+      </ul>
+		</div><!-- end main content -->			
+		</div>
+</div><!-- end grid -->
+{% endblock %}

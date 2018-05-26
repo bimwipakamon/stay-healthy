@@ -1,0 +1,180 @@
+{% extends "base.html" %} {% block title %}Stay Healthy - Full Body Workout{% endblock %} {% block body %}
+<!-- HEADER
+================================================== -->
+<div class="undermenuarea">
+	<div class="boxedshadow">
+	</div>
+	<div class="grid">
+		<div class="row">
+			<div class="c8">
+				<h1 class="titlehead">Body Fat Calculator</h1>
+			</div>
+			<div class="c4">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- CONTENT
+================================================== -->
+<div class="grid">
+		<div class="shadowundertop">
+		</div>
+		<div class="row">
+			
+			<!-- MAIN CONTENT -->
+			<div class="c12">
+				<h1 class="maintitle space-top">
+				<span>Body Fat</span>
+				</h1>
+			<ul class="list-teachers">
+        <li>
+          <div class="overflow">
+		  <script>
+			function $(){
+				var elements=new Array();
+				for (var i=0;i<arguments.length;i++){
+					var element=arguments[i];
+					if(typeof element=='string')element=document.getElementById(element);
+					if(arguments.length==1)return element;elements.push(element);
+				}
+					return elements;
+				}
+			function msystem(){
+				if($('msf').value=='metric'){
+					$('thf').innerHTML=' (Cms)';
+					$('tneck').innerHTML=' (Cms)';
+					$('twaist').innerHTML=' (Cms)';
+					$('thips').innerHTML=' (Cms)';
+				}
+				else{
+					$('thf').innerHTML=' (inches)';
+					$('tneck').innerHTML=' (inches)';
+					$('twaist').innerHTML=' (inches)';
+					$('thips').innerHTML=' (inches)';
+				}}
+			function bfat (){
+				var ms=$('msf').value;
+				var sex=$('sf').value;
+				var height=$('hf').value;
+				var neck=$('neck').value;
+				var waist=$('waist').value;
+				var hips=$('hips').value;
+				var ibf;var bfc;
+				if(height==null || height==0 || neck==null || neck==0 || waist==null || waist==0){
+					$('bf').value="Pl. enter data.";
+				}
+				else{
+					$('bf').value="";
+				}
+			if(ms=='metric'&&sex=='m'&&height>0&&waist>0&&neck> 0){
+				ibf=Math.round((86.010*(Math.log(waist*1-neck*1)/Math.log(10))-70.041*(Math.log(height)/Math.log(10))+30.30*1)*100)/100;
+				if(ibf<=5){
+					bfc='Essential';
+				}
+				else if(ibf>5&&ibf<=17){
+					bfc='Fit';
+				}
+				else if(ibf>17&&ibf<=25){
+					bfc='Acceptable';
+				}
+				else if(ibf>25 ) {
+					bfc='Obese';
+				}
+				$('bf').value=ibf+" % ";$('nbf').value=bfc;
+			}
+			else if(ms=='us'&&sex=='m'&&height>0&&waist>0&&neck> 0){
+				ibf= Math.round((86.010*(Math.log(waist*1-neck*1)/Math.log(10))-70.041*(Math.log(height)/Math.log(10))+36.76*1)*100)/100;
+				if(ibf<=5){
+					bfc='Essential';
+				}
+				else if(ibf>5&&ibf<=17){
+					bfc='Fit';
+				}
+				else if(ibf>17&&ibf<=25){
+					bfc='Acceptable';
+				}
+				else if(ibf>25 ) {
+					bfc='Obese';
+				}
+				$('bf').value=ibf+" % ";$('nbf').value=bfc;
+				}
+			else if(ms=='metric'&&sex=='f'&&height>0&&waist>0&&neck> 0){
+				ibf= Math.round((163.205*(Math.log(waist*1+hips*1-neck*1)/Math.log(10))-97.684*(Math.log(height)/Math.log(10))-104.912*1)*100)/100;
+				if(ibf<=15){
+					bfc='Essential';
+				}
+				else if(ibf>15&&ibf<=24){
+					bfc='Fit';
+				}
+				else if(ibf>24&&ibf<=31){
+					bfc='Acceptable';
+				}
+				else if(ibf>31 ) {
+					bfc='Obese';
+				}
+				$('bf').value=ibf+" % ";$('nbf').value=bfc;
+			}
+			else if(ms=='us'&&sex=='f'&&height>0&&waist>0&&neck> 0){
+				ibf= Math.round((163.205*(Math.log(waist*1+hips*1-neck*1)/Math.log(10))-97.684*(Math.log(height)/Math.log(10))-78.387*1)*100)/100;
+				if(ibf<=15){
+					bfc='Essential';
+				}
+				else if(ibf>15&&ibf<=24){
+					bfc='Fit';
+				}
+				else if(ibf>24&&ibf<=31){
+					bfc='Acceptable';
+				}
+				else if(ibf>31 ) {
+					bfc='Obese';
+				}
+				$('bf').value=ibf+" % ";$('nbf').value=bfc;
+			}}
+	</script>
+	<div class="box-contact">
+    <form id="contact-form" name=fp>
+      <fieldset>
+        <div class="coll-1">
+          <div>
+            <div class="form-txt">Measuring System : 
+              <select id=msf onchange=msystem();><option value=metric>Metric (Kgs, Cms)<option value=us>US (lbs, inches)</select></div>
+          </div>
+		</div>
+          <div>
+            <div class="form-txt">Sex : 
+              <select id=sf><option value=m>Male<option value=f>Female</select></div>
+          </div> 
+		  <div>
+            Height : <span id=thf>(Cms)</span>
+            <label class="phone"><input id=hf type="number">
+          </div>
+		  <div>
+            <div class="form-txt">Neck Girth : <span id=tneck>(Cms)</span></div>
+            <label class="phone"><input id=neck type="number">
+          </div>
+		  <div>
+            <div class="form-txt">Waist : <span id=twaist>(Cms)</span></div>
+            <label class="phone"><input id=waist type="number">
+          </div>
+		  <div>
+            <div class="form-txt">Hips : <span id=thips>(Cms)</span></div>
+            <label class="phone"><input id=hips type="number">
+            <div class="clear"></div>
+          </div>
+		  <div>
+			<input class="actionbutton w3-button w3-block w3-green" data-type="submit" type=button onclick='bfat();' value="Calculate Body Fat">
+		  </div><br>
+		  <h5>Body Fat : <input id=bf class=op style="font-size:h5;">
+			  Category : <input id=nbf class=op style="font-size:h5;"></h5>
+	  </p>		  
+      </fieldset>
+    </form>
+	</div>
+	</div>
+     <div class="clear"></div>
+      </li>
+      </ul>
+		</div><!-- end main content -->			
+		</div>
+</div><!-- end grid -->
+{% endblock %}

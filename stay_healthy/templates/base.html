@@ -1,0 +1,202 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+  <!-- STYLES & JQUERY 
+================================================== -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/modal.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icons.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slider.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/skinblue.css') }}">
+  <!-- change skin color -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slide.css') }}">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="/static/js/jquery-1.9.0.min.js"></script>
+  <!-- the rest of the scripts at the bottom of the document -->
+</head>
+
+<body>
+  <!-- <div class="container"> -->
+  <!-- TOP LOGO & MENU
+================================================== -->
+  <div class="grid">
+    <div class="row space-bot">
+      <!--Logo-->
+      <div class="c4">
+        <a href="/">
+          <img src="/static/images/logo.png" class="logo" alt="">
+        </a>
+      </div>
+      <!--Menu-->
+      <div class="c8">
+        <nav id="topNav">
+          <ul id="responsivemenu">
+            <li>
+              <a href="#">Meal Plans</a>
+              <ul style="display: none;">
+                <li>
+                  <a href="/standard-diet">Standard Diet</a>
+                </li>
+                <li>
+                  <a href="/vegetarian-diet">Vegetarian Diet</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Workout Mode</a>
+              <ul style="display: none;">
+                <li>
+                  <a href="/full-body-workout">Full Body Workout</a>
+                </li>
+                <li>
+                  <a href="/abs-workout">Abs Workout</a>
+                </li>
+                <li>
+                  <a href="/butt-workout">Butt Workout</a>
+                </li>
+                <li>
+                  <a href="/arm-workout">Arm Workout</a>
+                </li>
+                <li>
+                  <a href="/leg-workout">Leg Workout</a>
+                </li>
+
+              </ul>
+            </li>
+            <li>
+              <a href="#">Calculator</a>
+              <ul>
+                <li>
+                  <a href="/bmi">BMI</a>
+                </li>
+                <li>
+                  <a href="/bmr">BMR</a>
+                </li>
+                <li>
+                  <a href="/body-fat">Body Fat</a>
+                </li>
+                <li>
+                  <a href="/ideal-weight">Ideal Weight</a>
+                </li>
+                <li>
+                  <a href="/daily-calorie">Daily Calorie</a>
+                </li>
+              </ul>
+            </li>
+            <li class="last">
+              <a href="/contact">Contact</a>
+            </li>
+            <li>
+              <div class=" w3-pink">
+                {%if not session['username'] %}
+                <a href="/login">Login</a>
+                {%else%}
+                <a href="">{{username}}</a>
+                <ul style="display: none;">
+                  <!-- <li>
+                    <a href="/profile">Profile</a>
+                  </li> -->
+                  <li>
+                    <a href="/logout">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            {%endif%}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  {% block body %} {% endblock %}
+  <!-- FOOTER
+================================================== -->
+  <!-- to top button  -->
+  <p class="back-top floatright">
+    <a href="#top">
+      <span></span>
+    </a>
+  </p>
+  <!-- copyright area -->
+  <div class="copyright">
+    <div class="grid">
+      <div class="row">
+        <div class="c6">
+          <b>STAY HEALTHY © 2018. All Rights Reserved</b>
+        </div>
+        <div class="c6">
+          <span class="right">
+            <ul class="social-links">
+
+              <li class="twitter-link smallrightmargin">
+                <a href="https://twitter.com/" class="twitter has-tip" target="_blank" title="Follow Us on Twitter">Twitter</a>
+              </li>
+              <li class="facebook-link smallrightmargin">
+                <a href="https://www.facebook.com/" class="facebook has-tip" target="_blank" title="Join us on Facebook">Facebook</a>
+              </li>
+              <li class="google-link smallrightmargin">
+                <a href="https://plus.google.com/" class="google has-tip" title="Google +" target="_blank">Google</a>
+              </li>
+              <li class="linkedin-link smallrightmargin">
+                <a href="https://www.linkedin.com/" class="linkedin has-tip" title="Linkedin" target="_blank">Linkedin</a>
+              </li>
+              <li class="pinterest-link smallrightmargin">
+                <a href="https://www.pinterest.com/" class="pinterest has-tip" title="Pinterest" target="_blank">Pinterest</a>
+              </li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END CONTENT AREA -->
+  <!-- JAVASCRIPTS
+  ================================================== -->
+  <!-- all -->
+  <script src="/static/js/modernizr-latest.js"></script>
+
+  <!-- confirm password -->
+  <script src="/static/js/confirmPassword.js"></script>
+  <!-- menu & scroll to top -->
+  <script src="/static/js/common.js"></script>
+
+  <!-- slider -->
+  <script src="/static/js/jquery.cslider.js"></script>
+
+  <!-- cycle -->
+  <script src="/static/js/jquery.cycle.js"></script>
+
+  <!-- carousel items -->
+  <script src="/static/js/jquery.carouFredSel-6.0.3-packed.js"></script>
+
+  <!-- twitter -->
+  <script src="/static/js/jquery.tweet.js"></script>
+
+  <!-- slide -->
+  <script src="/static/js/slide.js"></script>
+
+  <!-- modal -->
+  <script src="/static/js/modal.js"></script>
+
+  <!-- Call Showcase - change 4 from min:4 and max:4 to the number of items you want visible -->
+  <script src="/static/js/carouFredSel.js"></script>
+
+  <!-- Call opacity on hover images from carousel-->
+  <script src="/static/js/animate.js"></script>
+
+  <!-- Hide all DDs inside .faqs -->
+  <script src="/static/js/hide.js"></script>
+  
+
+  <!-- </div>  -->
+  <!-- /container -->
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %}Register - Stay Healthy{% endblock %} {% block body %}
+<!-- HEADER
+    ================================================== -->
+<div class="undermenuarea">
+    <div class="boxedshadow">
+    </div>
+    <div class="grid">
+        <div class="row">
+            <div class="c8">
+                <h1 class="titlehead">Register</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid">
+    <div class="row space-top">
+        <div class="c6 space-top">
+            <h1 class="maintitle">
+                <span>
+                    <i class="icon-envelope-alt"></i> Sign Up</span>
+            </h1>
+            {% if error %}
+            <div class="alert alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close"></a>
+                <div style="color:lightsalmon">{{error}}</div>
+            </div>
+            {% endif %} {% if success %}
+            <div class="alert alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close"></a>
+                <div style="color:lightseagreen">{{success}}</div>
+            </div>
+            {% endif %}
+            <div class="wrapcontact">
+                <form name="form1" method="post">
+                    <div class="table" border="0" style="width:500px;">&nbsp;Name
+                        <input name="txtName" class="form-control" type="text" id="txtName" size="35"> &nbsp;Username
+                        <input name="txtUsername" class="form-control" type="text" id="txtUsername" size="20"> &nbsp;Password
+                        <input name="txtPassword" class="form-control" type="password" id="txtPassword"> &nbsp;Confirm Password
+                        <input name="txtConPassword" class="form-control" type="password" id="txtConPassword">
+                        <br>
+                        <input type="submit" name="Submit" class="actionbutton" value="Sign Up">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

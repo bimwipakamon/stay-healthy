@@ -1,0 +1,85 @@
+<!-- contact.html-->
+
+{% extends "base.html" %} {% block title %}Contact-Stay Healthy{% endblock %} {% block body %}
+<!-- HEADER
+================================================== -->
+<div class="undermenuarea">
+    <div class="boxedshadow">
+    </div>
+    <div class="grid">
+        <div class="row">
+            <div class="c8">
+                <h1 class="titlehead">Contact</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CONTENT
+    ================================================== -->
+<div class="grid">
+    <div class="shadowundertop"></div>
+    <div class="row space-bot">
+        <div class="c12">
+            <iframe class="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d968.9575180505066!2d100.77253796160225!3d13.728735675902113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d664c0f10e82d%3A0x66494885803150fc!2sKMITL+Fitness!5e0!3m2!1sth!2sth!4v1526285060626"
+                width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row space-top">
+        <!-- CONTACT FORM -->
+        <div class="c8 space-top">
+            <h1 class="maintitle">
+                <span>
+                    <i class="icon-envelope-alt"></i> Get in Touch</span>
+            </h1>
+
+            {% if error %}
+            <div class="alert alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close"></a>
+                <div style="color:lightsalmon">{{error}}</div>
+            </div>
+            {% endif %} {% if success %}
+            <div class="alert alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close"></a>
+                <div style="color:lightseagreen">{{success}}</div>
+            </div>
+            {% endif %}
+
+
+            <div class="wrapcontact">
+                <form method="post" id="contactform">
+                    <div class="form">
+                        <div class="c6 noleftmargin">
+                            <label>Name</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div class="c6 noleftmargin">
+                            <label>E-mail address</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <label>Message</label>
+                        <textarea name="message" class="ctextarea" rows="9" id="message" required></textarea>
+                        <input type="submit" id="submit" class="button" style="font-size:12px;" value="SUBMIT">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="c4 space-top">
+            <h1 class="maintitle">
+                <span>
+                    <i class="icon-map-marker"></i> Locations</span>
+            </h1>
+            <p>
+                <a class="link-2" href="">STAY HEALTHY</a>
+            </p>
+            <dl>
+                <dt>3 Chalongkrung 1 Yaek 1, Khwaeng Lam Prathew, Khet Lat Krabang, Krung Thep Maha Nakhon 10520</dt>
+                <dd>E-mail:
+                    <a href="">mail@stayhealthy.com</a>
+                </dd>
+            </dl>
+            <br/>
+        </div>
+    </div>
+</div>
+<!-- end grid -->
+{% endblock %}
